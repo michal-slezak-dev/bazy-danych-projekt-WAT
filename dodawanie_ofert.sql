@@ -23,3 +23,16 @@ VALUES (1, 1, 3, 2, 609888, 'opis oferty 2 vol 2 blah blah', '2025-01-01', NULL)
 (1, 1, 22, 6, 250000, 'opis oferty blah blah', '2024-10-14', NULL),
 (1, 1, 23, 7, 700000, 'opis oferty blah blah', '2024-12-13', NULL),
 (1, 1, 24, 8, 350000, 'opis oferty blah blah', '2024-08-12', NULL);
+
+--CALL dodaj_oferte(32, 1, 'wynajem', 9500, 'opis opis blah blah');
+--CALL dodaj_oferte(33, 1, 'sprzedaż', 850000, 'opis opis blah blah');
+--CALL dodaj_oferte(34, 1, 'sprzedaż', 650000, 'opis opis blah blah');
+--CALL dodaj_oferte(35, 1, 'sprzedaż', 750000, 'opis opis blah blah');
+--CALL dodaj_oferte(36, 2, 'sprzedaż', 660000, 'opis opis blah blah');
+--CALL dodaj_oferte(37, 2, 'sprzedaż', 380000, 'opis opis blah blah');
+--CALL dodaj_oferte(38, 3, 'sprzedaż', 800000, 'opis opis blah blah');
+--CALL dodaj_oferte(39, 3, 'sprzedaż', 700000, 'opis opis blah blah');
+--CALL dodaj_oferte(40, 8, 'sprzedaż', 550000, 'opis opis blah blah');
+--CALL dodaj_oferte(41, 8, 'sprzedaż', 1250000, 'opis opis blah blah');
+--CALL dodaj_oferte(42, 1, 'sprzedaż', 9500000, 'opis opis blah blah');
+--CALL dodaj_oferte(43, 1, 'sprzedaż', 780000, 'opis opis blah blah');

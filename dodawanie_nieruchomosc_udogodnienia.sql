@@ -195,3 +195,19 @@ VALUES (1, 2),
 (29, 11),
 (30, 11),
 (31, 11);
+
+INSERT INTO nieruchomosc_udogodnienia (id_nieruchomosci, id_udogodnienia)
+VALUES (32, 1),
+(33, 1),
+(34, 7),
+(35, 8),
+(36, 3),
+(37, 4),
+(38, 15),
+(39, 15),
+(40, 15),
+(41, 7),
+(42, 8),
+(43, 10),
+(44, 11),
+(45, 9)

@@ -27,6 +27,7 @@ WHERE status_umowy.status_umowy LIKE 'podpisana';
 -- sprawdzam czy oferta ma status aktywna
 IF v_id_statusu_oferty != v_id_statusu_oferty_aktywna THEN
     RAISERROR 23000 'Ta oferta nie jest aktywna!';
+    RETURN;
 END IF;
 
 -- dodaje nowa, podpisana umowe

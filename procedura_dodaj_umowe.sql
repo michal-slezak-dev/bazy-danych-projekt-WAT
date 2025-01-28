@@ -54,6 +54,27 @@ END
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 /////////////
 CREATE PROCEDURE dodaj_umowe
 (

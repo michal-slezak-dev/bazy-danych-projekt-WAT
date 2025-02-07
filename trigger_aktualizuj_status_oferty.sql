@@ -16,7 +16,7 @@ BEGIN
     FROM status_umowy
     WHERE status_umowy.status_umowy LIKE 'podpisana';
     
-    -- jeśli mam umowę podpisana, to zmieniam status oferty przypisanej do tej umowy na zamkniętą
+    -- jeśli mam umowę podpisana, to zmieniam status oferty przypisanej do tej umowy na zakonczona
     IF new_row.id_statusu_umowy = v_id_statusu_umowy_podpisana THEN 
         UPDATE oferta
         SET oferta.id_statusu_oferty = v_id_statusu_oferty_zakonczona, 

@@ -22,7 +22,7 @@ SET status_oferty = 'aktywna';
 SELECT id_typu_oferty INTO v_id_typu_oferty
 FROM typ_oferty WHERE typ_oferty.typ_oferty LIKE p_typ_oferty;
 
--- najpierw pobieram id statusów ofert dla danej nieruchomości
+-- najpierw pobieram id statusu oferty aktywna dla danej nieruchomości
 SELECT id_statusu_oferty INTO v_id_statusu_oferty_aktywna
 FROM status_oferty
 WHERE status_oferty LIKE 'aktywna';
@@ -56,7 +56,6 @@ IF p_update LIKE 'T' THEN
     END IF;
 ELSE -- jeśli nie chcemy aktualizować tylko dodać nową ofertę
     IF v_id_aktywna_oferta IS NOT NULL THEN -- jeśli istnieje już aktywna oferta dla tej nieruchomości to nie mogę jej dodać!
-        --SIGNAL SQLSTATE '45000' SET MESSAGE TEXT 'Istnieje już aktywna oferta dla tej nieruchomości!';
         RAISERROR 23000 'Istnieje już aktywna oferta dla tej nieruchomości!';
     ELSE -- jeśli nie istnieje aktywna oferta dla danej nieruchomości to chce ją dodać, dlatego id statusu ustawiam na 1
         INSERT INTO oferta (

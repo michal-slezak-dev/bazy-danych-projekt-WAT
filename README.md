@@ -1,4 +1,4 @@
-##Projekt Bazy Danych dla biura nieruchomości##
+## Projekt Bazy Danych dla biura nieruchomości ##
 
 Jest to projekt bazy danych wraz z implementacją w Sybase oraz PostgreSQL. Zostało to wykonane w ramach projektu zaliczeniowego z przedmiotu Bazy Danych na 3. semestrze studiów
 na kierunku informatyka WCY WAT.
@@ -38,9 +38,11 @@ Zakres funkcjonalności bazy danych obejmuje m.in.:
 •	Pracę agentów
 •	Statusy i typy umów, ofert oraz typy nieruchomości
 •	Automatyzacja i analiza wyników działalności biura i agentów
-Analiza wymagań
+
+# Analiza wymagań #
 Właściciel może mieć wiele nieruchomości, ale nieruchomość ma jednego właściciela, aby ułatwić komunikację i zarządzanie nieruchomościami na poziomie biuro – właściciel. Dane właściciela, agenta i klienta takie jak ich PESEL, numer dowodu osobistego, email czy numer telefonu muszą być unikalne i muszą  być określone. Każda nieruchomość ma swój określony typ (rodzaj) i status (stan techniczny i wizualny). Nieruchomość może mieć udogodnienia. Agenci opiekują się danymi ofertami. Każda oferta ma swój typ (sprzedaż czy wynajem) oraz status (aktywna/zakończona). Agenci mogą prowadzić wizyty w nieruchomościach dla danych klientów. Jeśli klient jest zainteresowany i zdecydowany to sporządzana jest umowa wstępna z wszelkimi informacjami o kliencie, agencie jak i samej ofercie nieruchomości, służy do m.in. statystyki działalności biura, umowa wiążąca prawnie odnośnie sprzedaży/wynajmu nieruchomości jest sporządzana u notariusza a nie w biurze. Po podpisaniu umowy (opiewającą na ustaloną cenę nieruchomości lub czynszu miesięcznego wynajmu), przeprowadzana jest transakcja na kwotę 8% wartości ceny danej nieruchomości w ramach sprzedaży lub jednego całego miesięcznego czynszu w przypadku wynajmu, która to następnie będzie podzielona między biuro i agenta. Nieruchomość może mieć tylko jedną aktywną ofertę, ale wiele zakończonych. Jeśli dana nieruchomość została sprzedana lub wynajęta, wszystkie zaplanowane wizyty w przyszłości są usuwane z kalendarza wizyt. Agenci pracują (odbywają wizyty) między 9:00 a 20:00. Procent prowizji agenta wynosi co najmniej 1%. Gdy mamy do czynienia z działką to liczba pokoi i łazienek jest pusta, to samo tyczy się numeru mieszkania dla domu.
-Wyróżnione pozycje na diagramie konceptualnym:
+
+# Wyróżnione pozycje na diagramie konceptualnym: #
 osoba – encja abstrakcyjna, po której dziedziczą wlasciciel, klient oraz agent.
 wlasciciel – osoba fizyczna będąca w posiadaniu nieruchomości. Na potrzeby projektu zakładamy, że w systemie biura jako właściciel danej nieruchomości będzie wpisana jedna osoba.
 status_nieruchomosci – reprezentuje stan techniczny i wizualny nieruchomości, np. do remontu/do odświeżenia/stan deweloperski/stan surowy otwarty/zamknięty/stan pod klucz/czysta/zarośnieta, w zależności czy to dom, mieszkanie czy działka
@@ -58,18 +60,22 @@ agent - osoba fizyczna, będąca pracownikiem biura nieruchomości, opiekująca 
 klient - osoba fizyczna, korzystająca z usług biura nieruchomości w celu nabycia lub wynajmu nieruchomości.
 wizyta - reprezentuje wizyty w nieruchomościach organizowane przez biuro nieruchomości i prowadzone przez danego agenta opiekującego się daną ofertą, posiada informacje o wizycie danego klienta na nieruchomości, o tym kliencie i agencie, który się daną ofertą opiekuje
 prowizja - reprezentuje prowizje z podziałem na prowizje agenta oraz biura na podstawie danej transakcji (prowizja_agenta - dla oferty sprzedaży to będzie to równe procentowi agenta z tabeli agent a w przypadku oferty wynajmu to 45% miesięcznego czynszu, prowizja_biura - 8% od ceny nieruchomości - procent_agenta z tej kwoty w przypadku oferty sprzedaży a w przypadku oferty wynajmu to kwota_prowizji - 45% miesięcznego czynszu, czyli prowizja agenta)
-Dopuszczalne wartości
+
+# Dopuszczalne wartości
 Kwoty prowizji, transakcji, kolumny, które są wartościami liczbowymi muszą być >= 0, z wyjątkiem liczby pokoi i łazienek, które jeśli nie są NULL to musza być > 0.
 Status nieruchomości: do remontu, do odświeżenia, stan deweloperski, stan surowy otwarty, stan surowy zamknięty, stan pod klucz, czysta, zarośnięta
 Typ nieruchomości: dom wolnostojący, bliźniak, szeregowiec, mieszkanie, działka budowlana, działka rolna, działka siedliskowa, działka rekreacyjna, działka leśna , działka inwestycyjna
 Typ oferty: sprzedaż, wynajem
 Status oferty: aktywna, zakończona
 Status umowy: podpisana, zrealizowana
-Modele bazy danych
+
+## Modele bazy danych
 Model konceptualny
- 
+![image](https://github.com/user-attachments/assets/dbe23be8-bddd-409f-895e-b5b5dc6698dc)
+
 Model fizyczny
- 
+![image](https://github.com/user-attachments/assets/b65b6c6c-17dd-4282-846b-9cea1d76ce7b)
+
 Widoki
 Widok v_nieskuteczne_wizyty wyświetlający nieruchomości z największą liczbą odbytych wizyt w poprzednim miesiącu a nadal są aktywne, posortowane malejąco. Pomaga w analizie, które nieruchomości są najbardziej interesujące dla klientów, dzięki czemu będzie wiadomo, które nieruchomości lepiej wypromować.
 

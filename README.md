@@ -3,7 +3,7 @@
 ## Autor
 Michał Ślęzak
 
-## Prowadzący ćwiczenia
+## Prowadzący ćwiczenia laboratoryjne
 Dr inż. Jarosław Koszela
 
 ---

@@ -4,11 +4,11 @@
 Michał Ślęzak
 
 ## Prowadzący ćwiczenia laboratoryjne
-Dr inż. Jarosław Koszela
+- dr inż. Jarosław Koszela
 
 ## Prowadzący wykłady
-Dr inż. Maciej Kiedrowicz
-Mgr inż. Józef Woźniak
+- dr inż. Maciej Kiedrowicz
+- mgr inż. Józef Woźniak
 
 ---
 

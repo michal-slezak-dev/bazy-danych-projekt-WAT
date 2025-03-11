@@ -1,7 +1,7 @@
 # Projekt Bazy Danych dla Biura Nieruchomości
 
 ## Autor
-Michał Ślęzak
+Michał Ślęzak WCY23IY1S1
 
 ## Prowadzący ćwiczenia laboratoryjne
 - dr inż. Jarosław Koszela
